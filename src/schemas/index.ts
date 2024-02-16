@@ -1,10 +1,15 @@
-import createUserSchema from "./createUser.schema";
-import returnCreatedUserSchema from "./returnCreatedUser.schema";
-import loginUserSchema from "./loginUser.schema";
-import returnUpdatedUserSchema from "./returnUpdatedUser.schema";
-import getUserByIdSchema from "./getUserById.schema";
-import listUsersSchema from "./listUsers.schema";
-import createAddressSchema from "./createAddress.schema";
+import createUserSchema from "./Users/createUser.schema";
+import returnCreatedUserSchema from "./Users/returnCreatedUser.schema";
+import loginUserSchema from "./Users/loginUser.schema";
+import returnUpdatedUserSchema from "./Users/returnUpdatedUser.schema";
+import getUserByIdSchema from "./Users/getUserById.schema";
+import listUsersSchema from "./Users/listUsers.schema";
+
+/* Dishes */
+import createDishSchema from "./Dishes/dishes.schema";
+
+/* Ingredients */
+import createIngredientSchema from "./Ingredients/ingredients.schema";
 
 export {
 	createUserSchema,
@@ -13,5 +18,6 @@ export {
 	returnUpdatedUserSchema,
 	getUserByIdSchema,
 	listUsersSchema,
-	createAddressSchema,
+	createDishSchema,
+	createIngredientSchema,
 };

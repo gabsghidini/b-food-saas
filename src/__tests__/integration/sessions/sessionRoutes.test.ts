@@ -2,7 +2,12 @@ import { DataSource } from "typeorm";
 import AppDataSource from "../../../data-source";
 import request from "supertest";
 import app from "../../../app";
-import { mockedAdmin, mockedAdminLogin } from "../../mocks";
+import {
+	mockedAdmin,
+	mockedAdminLogin,
+	mockedInactiveLogin,
+	mockedToBeInactive,
+} from "../../mocks";
 
 describe("/login", () => {
 	let connection: DataSource;
@@ -46,15 +51,15 @@ describe("/login", () => {
 		const adminLoginResponse = await request(app)
 			.post("/login")
 			.send(mockedAdminLogin);
-		const findUser = await request(app)
-			.get("/users")
-			.set("Authorization", `Bearer ${adminLoginResponse.body.token}`);
+		const inactive = await request(app)
+			.post("/users")
+			.send(mockedToBeInactive);
 		await request(app)
-			.delete(`/users/${findUser.body[0].id}`)
+			.delete(`/users/${inactive.body.id}`)
 			.set("Authorization", `Bearer ${adminLoginResponse.body.token}`);
 		const response = await request(app)
 			.post("/login")
-			.send(mockedAdminLogin);
+			.send(mockedInactiveLogin);
 		expect(response.body).toHaveProperty("message");
 		expect(response.status).toBe(400);
 	});

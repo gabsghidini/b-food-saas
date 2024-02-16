@@ -1,5 +1,6 @@
 import userRouter from "./users.routes";
 import loginRouter from "./sessions.routes";
-import plateRoutes from "./plate.routes";
+import dishesRoutes from "./dishes.routes";
+import ingredientsRoutes from "./ingredients.routes";
 
-export { userRouter, loginRouter, plateRoutes };
+export { userRouter, loginRouter, dishesRoutes, ingredientsRoutes };

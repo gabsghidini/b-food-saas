@@ -37,8 +37,8 @@ describe("/users", () => {
 		expect(response.body).toHaveProperty("createdAt");
 		expect(response.body).toHaveProperty("updatedAt");
 		expect(response.body).not.toHaveProperty("password");
-		expect(response.body.name).toEqual("Joana");
-		expect(response.body.email).toEqual("joana@mail.com");
+		expect(response.body.name).toEqual("Eevee");
+		expect(response.body.email).toEqual("eevee@mail.com");
 		expect(response.body.isAdm).toEqual(false);
 		expect(response.body.isActive).toEqual(true);
 		expect(response.status).toBe(201);
@@ -185,7 +185,10 @@ describe("/users", () => {
 	});
 
 	test("PATCH /users/:id - should not be able to update user with invalid id", async () => {
-		const newValues = { name: "Joana Brito", email: "joanabrito@mail.com" };
+		const newValues = {
+			name: "Eevee Saura Rex",
+			email: "eeveesr@mail.com",
+		};
 
 		const admingLoginResponse = await request(app)
 			.post("/login")
@@ -195,10 +198,9 @@ describe("/users", () => {
 		const userTobeUpdateRequest = await request(app)
 			.get("/users")
 			.set("Authorization", token);
-		const userTobeUpdateId = userTobeUpdateRequest.body[0].id;
 
 		const response = await request(app)
-			.patch(`/users/${userTobeUpdateId}`)
+			.patch(`/users/12`)
 			.set("Authorization", token)
 			.send(newValues);
 
@@ -297,7 +299,10 @@ describe("/users", () => {
 	});
 
 	test("PATCH /users/:id -  should be able to update user", async () => {
-		const newValues = { name: "Joana Brito", email: "joanabrito@mail.com" };
+		const newValues = {
+			name: "Eevee Saura Rex",
+			email: "eeveesr@mail.com",
+		};
 
 		const admingLoginResponse = await request(app)
 			.post("/login")
@@ -319,7 +324,7 @@ describe("/users", () => {
 			.set("Authorization", token);
 
 		expect(response.status).toBe(200);
-		expect(userUpdated.body[0].name).toEqual("Joana Brito");
+		expect(userUpdated.body[0].name).toEqual("Eevee Saura Rex");
 		expect(userUpdated.body[0]).not.toHaveProperty("password");
 	});
 });

@@ -1,5 +1,5 @@
 import { Entity, Column, PrimaryGeneratedColumn, ManyToOne } from "typeorm";
-import { Plate } from "./plate";
+import { Dish } from "./dish";
 
 @Entity()
 export class Ingredient {
@@ -15,6 +15,9 @@ export class Ingredient {
 	@Column()
 	quantity: number;
 
-	@ManyToOne(() => Plate, (plate) => plate.ingredients)
-	plate: Plate;
+	@Column()
+	measurementUnit: string;
+
+	@ManyToOne(() => Dish, (dish) => dish.ingredients)
+	dish: Dish;
 }

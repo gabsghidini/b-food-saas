@@ -5,6 +5,7 @@ import verifyUserAdminMiddleware from "./users/verifyUserAdmin.middleware";
 import verifyIfUserExistsMiddleware from "./users/verifyIfUserExists.middleware";
 import verifyIfLoginExistsMiddleware from "./sessions/verifyIfLoginExists.middleware";
 import verifyForbiddenFieldsMiddleware from "./users/verifyForbiddenFields.middleware";
+import verifyIfDishAlreadyExists from "./dishes/verifyIfDishAlreadyExists.middleware";
 
 export {
 	validateSchemaMiddleware,
@@ -14,4 +15,5 @@ export {
 	verifyIfUserExistsMiddleware,
 	verifyIfLoginExistsMiddleware,
 	verifyForbiddenFieldsMiddleware,
+	verifyIfDishAlreadyExists,
 };

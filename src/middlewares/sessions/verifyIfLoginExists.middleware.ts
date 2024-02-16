@@ -20,7 +20,7 @@ const verifyIfLoginExistsMiddleware = async (
 	});
 
 	if (!user) {
-		throw new AppError({ message: "User doesn't exists" }, 404);
+		throw new AppError({ message: "User doesn't exists" }, 403);
 	}
 
 	if (!user.isActive) {
