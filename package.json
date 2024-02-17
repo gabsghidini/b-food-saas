@@ -1,9 +1,7 @@
 {
-	"name": "Food-Saas",
-	"version": "1.0.0",
-	"main": "index.ts",
-	"author": "Gabs",
-	"license": "MIT",
+	"name": "f-food-saas",
+	"version": "0.1.0",
+	"private": true,
 	"scripts": {
 		"dev": "ts-node-dev --ignore-watch node_modules src/server.ts",
 		"typeorm": "typeorm-ts-node-commonjs",
