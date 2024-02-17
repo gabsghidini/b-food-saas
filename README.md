@@ -1,9 +1,9 @@
-# S5-19 | 🏁 Entrega: KImóveis - TypeORM com Relacionamentos
+# Food Saas | 🏁 Back-End
 
 Para inciar este projeto, é necessário instalar as dependências, que serão utilizadas nos testes. Portanto utilize o comando abaixo para instalar tais dependências:
 
 ````
-yarn install
+npm install
 ````
 <br>
 
@@ -12,7 +12,7 @@ yarn install
 
 Com isso feito, para rodar sua aplicação, basta utilizar o comando
 ````
-yarn dev
+npm run dev
 ````
 
 <br>
@@ -29,10 +29,6 @@ Já na subpasta `mocks` estão os dados que serão utilizados para os testes.
 
 No arquivo `jest.config.json` estão algumas configurações necessárias para os testes rodarem.
 
-**`De modo algum altere qualquer um desses arquivos.`** Isso poderá comprometer a integridade dos testes.
-
-E também não altere o script de `test` localizado no `package.json`. Isso será utilizado para rodar os testes.
-
 <br>
 
 
@@ -44,29 +40,29 @@ Estando no terminal e dentro do caminho correto, você poderá utilizar os coman
 
 ### Rodar todos os testes
 ````
-yarn test
+npm run test
 ````
 #
 ### Rodar todos os testes e ter um log ainda mais completo
 ````
-yarn test --all
+npm run test --all
 ````
 #
 
 ### Rodar os testes de uma pasta específica
 `detalhe: repare que tests está envolvido por 2 underlines. Isso se chama dunder.`
 ````
-yarn test ./scr/__tests__/integration/<subpasta>
+npm run test ./scr/__tests__/integration/<subpasta>
 ````
 #
 ### Rodar os testes de um arquivo específico
 ````
-yarn test ./scr/__tests__/integration/<subpasta>/<arquivo>
+npm run test ./scr/__tests__/integration/<subpasta>/<arquivo>
 ````
 #
 ### Rodar um teste específico
 ````
-yarn test -t <describe ou test específico envolto em aspas>
+npm run test -t <describe ou test específico envolto em aspas>
 ````
 ````
 \\ ex: yarn test -t "/categories"
