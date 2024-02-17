@@ -2,9 +2,9 @@ name: Execução dos testes de integração
 
 on:
     push:
-        branches: [main]
+        branches: [main, developer]
     pull_request:
-        branches: [main]
+        branches: [main, developer]
 
 jobs:
     integration_tests:
@@ -20,7 +20,7 @@ jobs:
                   node-version: ${{ matrix.node-version }}
 
             - name: Install dependences
-              run: yarn
+              run: npm install
 
             - name: Run tests
-              run: yarn test
+              run: npm run test
